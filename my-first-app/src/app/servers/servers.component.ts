@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-  username = '';
+  serverName = 'IgorServer';
+  serverCreationStatus = 'No server was created!';
+  serverCreated = false;
   constructor() { 
     
   }
@@ -14,8 +16,9 @@ export class ServersComponent implements OnInit {
   ngOnInit(): void {
   }
 
-resetUsername() {
-  this.username = '';
-}
+  onCreateServer() {
+    this.serverCreated = true;
+    this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
+  }
 
 }
