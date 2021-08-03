@@ -1,1 +1,2 @@
-<p>Sever with ID {{ serverId }} status {{serverStatus}}</p>
+<p [ngStyle]="{backgroundColor: getColor()}"
+ [ngClass]="{online: serverStatus === 'online'}">Sever with ID {{ serverId }} status {{serverStatus}}</p>
