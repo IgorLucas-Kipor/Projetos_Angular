@@ -21,7 +21,7 @@ export class ServersComponent implements OnInit {
 
   changeDisplay() {
     this.displayPassword = !this.displayPassword;
-    this.loggedValue.push(this.loggedValue.length+1)
+    this.loggedValue.push(new Date())
   }
 
 
