@@ -3,13 +3,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-servers',
   templateUrl: './servers.component.html',
-  styleUrls: ['./servers.component.css']
+  styles: [`
+    .white {
+      color: white;
+    }
+  `]
 })
 export class ServersComponent implements OnInit {
-  serverName = 'IgorServer';
-  serverCreationStatus = 'No server was created!';
-  serverCreated = false;
-  servers = [ 'TestServer', 'TestServer2']
+  displayPassword = false;
+  loggedValue = [];
   constructor() { 
     
   }
@@ -17,10 +19,10 @@ export class ServersComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onCreateServer() {
-    this.serverCreated = true;
-    this.servers.push(this.serverName);
-    this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
+  changeDisplay() {
+    this.displayPassword = !this.displayPassword;
+    this.loggedValue.push(this.loggedValue.length+1)
   }
+
 
 }
