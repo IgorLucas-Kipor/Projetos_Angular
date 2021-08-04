@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ShoppingListComponent } from './header/shopping_list/shopping-list/shopping-list.component';
@@ -19,10 +19,11 @@ import { RecipesComponent } from './header/recipe_book/recipes/recipes.component
     RecipeListComponent,
     RecipeItemComponent,
     RecipeDetailsComponent,
-    RecipesComponent
+    RecipesComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
