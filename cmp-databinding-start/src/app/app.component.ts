@@ -6,30 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  serverElements = [{type: 'server', name: 'Igor Server', content: 'Just a test.'}];
+  oddNumbers: number[] = [];
+  evenNumbers: number[] = [];
 
-  onServerAdded(serverData : {serverName: string, serverContent: string}) {
-    this.serverElements.push({
-      type: 'server',
-      name: serverData.serverName,
-      content: serverData.serverContent
-    });
-  }
-
-  onBlueprintAdded(blueprintData:{blueprintName: string, blueprintContent: string} ) {
-    this.serverElements.push({
-      type: 'blueprint',
-      name: blueprintData.blueprintName,
-      content: blueprintData.blueprintContent
-    });
-  }
-
-  onFirstChange (){
-    this.serverElements[0].name = 'Changed!';
-  }
-
-  onDestroyFirst() {
-    this.serverElements.splice(0,1);
+  onIntervalFired(number: number) {
+    console.log(number)
+    if (number % 2 != 0) {
+      this.oddNumbers.push(number)
+    } else {
+      this.evenNumbers.push(number)
+    }
   }
 
 }
